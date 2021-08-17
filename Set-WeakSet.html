@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let myArry = [] // literal syntext
+        // let myArry = new Array(); //constructor syntext
+
+        // -----------------------------------------------------------------------------------------------
+                        // sets (literal syntext e hoi na)
+        // -----------------------------------------------------------------------------------------------
+        //function log(anything){
+            //return console.log(anything)
+        //}
+        // let myArray = new Array();
+        // let mySet = new Set();
+        // mySet.add(5);
+        // mySet.add('Bangladesh');
+        // mySet.delete('Bangladesh');
+        // log(mySet.has('Bangladesh'));
+        // log(mySet);
+        // mySet.add(4).add(6).add('india').delete(4);
+        // log(mySet);
+        // mySet.add(2).add(3).add('Vuthan').clear();
+        // log(mySet);
+        // mySet.add(7).add(8).add('india').clear();
+        // log(mySet.size);
+        // ------------  Array To Set   ------------------- 
+        // function log(anything){
+             //return console.log(anything)
+        // }
+        // let myArray = [2, 4, 6, 7, 8];
+        // let mySet = new Set(myArray);
+        // let mySet = new Set('Bangladesh');
+        // log(mySet);
+        // ------------------------------------
+        // function log(anything){
+             //return console.log(anything)
+        // }
+        // let myArray = [2, 4, 6, 7, 8];
+        // // let mySet = new Set(myArray);
+        // let mySet = new Set('Bangladesh');
+        // for(let value of mySet){
+        //     log(value);
+        // }
+        // ------------  Set To Array   -------------------
+        // function log(anything){
+             //return console.log(anything)
+        // }
+        // let myArray = [2, 4, 6, 7, 8];
+        // let mySet = new Set(myArray);
+        // // log([...mySet]);
+        // log(Array.from(mySet));
+        // ------------------------------------
+        // function log(anything){
+             //return console.log(anything)
+        // }
+        // let myArray = 'Bangladesh';
+        // let mySet = new Set(myArray);
+        // mySet.add('a');
+        // log(mySet);
+        // ------------------------------------
+        // function log(anything){
+             //return console.log(anything)
+        // }
+        // let myArray = [1, 2, 3];
+        // let mySet = new Set(myArray);
+        // mySet.add({
+        //     a : 5,
+        //     b : 2
+        // });
+        // mySet.add({
+        //     a : 5,
+        //     b : 2
+        // });
+        // log(mySet);
+        // ------------------------------------
+        // function log(anything){
+             //return console.log(anything)
+        // }
+        // let myArray = [1, 2, 3];
+        // let mySet = new Set(myArray);
+        // let object = {
+        //     a : 5,
+        //     b : 2
+        // }
+        // mySet.add(object);
+        // mySet.add(object);
+        // log(mySet);
+        // ------------------------------------
+        // function log(anything){
+             //return console.log(anything)
+        // }
+        // let myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+        // log([...new Set(myArray)]);
+        // ------------------------------------
+        // function log(anything){
+             //return console.log(anything)
+        // }
+        // let a = new Set([1, 2, 3]);
+        // let b = new Set([4, 3, 2]);
+
+        // let union = new Set([...a, ...b]);
+        // log(union);
+
+        // let intersection = new Set([...a].filter(x => b.has(x)))
+        // log(intersection);
+
+        // let difference = new Set([...a].filter(x => !b.has(x)))
+        // log(difference);
+        // -----------------------------------------------------------------------------------------------
+                        // WeakSet (literal syntext e hoi na)
+        // -----------------------------------------------------------------------------------------------
+        // function log(anything){
+        //     return console.log(anything)
+        // }
+        // const ws = new WeakSet();
+        // ws.add({a : 1})
+        // log(ws);
+        // ------------------------------------
+        // function log(anything){
+        //     return console.log(anything)
+        // }
+        // const ws = new WeakSet([{a : 1}, {b : 2}]);
+        // log(ws);
+        // ------------------------------------
+        function log(anything){
+            return console.log(anything)
+        }
+        const ws = new WeakSet();
+
+        class SomeClass {
+            constructor(){
+                ws.add(this);
+            }
+            method(){
+                if(!ws.has(this)){
+                    throw new Error("You cant access")
+                }
+                else{
+                    return 'i am a method'
+                }
+            }
+        }
+
+        const a = new SomeClass();
+        log(a.method());
+
+        // log(SomeClass.prototype.method());
+    </script>
+</body>
+</html>
